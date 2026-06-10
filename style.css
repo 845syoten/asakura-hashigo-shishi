@@ -352,3 +352,332 @@ body{color:var(--text-strong);background:linear-gradient(180deg,#fff8e7 0%,#f2df
   .join-cell{padding: 18px 16px !important;}
   .contact-info{padding: 18px 16px !important;}
 }
+
+
+/* =========================================================
+   FINAL READABILITY PASS
+   - 全体を「読める」こと優先に再調整
+   - 薄い金文字・透明背景を廃止
+   - スマホは1カラム、固定ヘッダーの重なりを軽減
+========================================================= */
+:root{
+  --read-bg:#fff8e6;
+  --read-card:#fffdf6;
+  --read-card2:#fff4d4;
+  --read-ink:#17100b;
+  --read-body:#2b1d13;
+  --read-red:#8b1f16;
+  --read-gold:#d5a63d;
+  --read-dark:#0d0705;
+  --read-dark2:#21100a;
+  --read-cream:#fff7df;
+}
+html, body{
+  background:var(--read-bg) !important;
+  color:var(--read-ink) !important;
+}
+body:before{opacity:.025 !important;}
+.section{
+  background:var(--read-bg) !important;
+  color:var(--read-ink) !important;
+}
+.section:not(.dark) .heading h2,
+.section:not(.dark) h2,
+.section:not(.dark) h3,
+.section:not(.dark) .text-large,
+.section:not(.dark) .copy,
+.section:not(.dark) p,
+.section:not(.dark) li,
+.section:not(.dark) span,
+.section:not(.dark) b,
+.section:not(.dark) strong{
+  color:var(--read-ink) !important;
+  -webkit-text-fill-color:var(--read-ink) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.section:not(.dark) .heading p,
+.section:not(.dark) .fact b,
+.section:not(.dark) .schedule-item b,
+.section:not(.dark) .join-cell b,
+.section:not(.dark) .story b{
+  color:var(--read-red) !important;
+  -webkit-text-fill-color:var(--read-red) !important;
+  font-weight:900 !important;
+}
+.copy,
+p,
+li,
+.note,
+.gallery-note{
+  color:var(--read-body) !important;
+  opacity:1 !important;
+  font-weight:500 !important;
+  text-shadow:none !important;
+}
+.note,
+.gallery-note,
+.credit{
+  color:#4b3423 !important;
+  opacity:1 !important;
+}
+.fact,
+.story,
+.tile,
+.support div,
+.access div,
+.contact-panel,
+.contact-info,
+.join-cell,
+.schedule-item,
+.source-list,
+.card{
+  background:var(--read-card) !important;
+  color:var(--read-ink) !important;
+  border:1px solid rgba(80,40,20,.20) !important;
+  box-shadow:0 12px 32px rgba(60,32,14,.12) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+  min-height:0 !important;
+  height:auto !important;
+}
+.fact *,
+.story *,
+.tile *,
+.support div *,
+.access div *,
+.contact-panel *,
+.contact-info *,
+.join-cell *,
+.schedule-item *,
+.source-list *,
+.card *{
+  color:var(--read-ink) !important;
+  -webkit-text-fill-color:var(--read-ink) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.fact b,
+.story b,
+.tile h3,
+.support h3,
+.access h3,
+.contact-panel .heading p,
+.contact-info strong,
+.join-cell b,
+.schedule-item b,
+.card h3{
+  color:var(--read-red) !important;
+  -webkit-text-fill-color:var(--read-red) !important;
+}
+.fact span,
+.story span,
+.tile p,
+.support div p,
+.access div p,
+.contact-info p,
+.join-cell,
+.schedule-item p,
+.card p,
+.source-list li{
+  color:var(--read-body) !important;
+  -webkit-text-fill-color:var(--read-body) !important;
+}
+.section.dark{
+  background:linear-gradient(135deg,var(--read-dark),var(--read-dark2) 68%,#090503) !important;
+  color:var(--read-cream) !important;
+}
+.section.dark .heading h2,
+.section.dark h2,
+.section.dark h3,
+.section.dark .text-large,
+.section.dark .copy,
+.section.dark p,
+.section.dark li,
+.section.dark span,
+.section.dark b,
+.section.dark strong{
+  color:var(--read-cream) !important;
+  -webkit-text-fill-color:var(--read-cream) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+.section.dark .heading p,
+.section.dark .card h3,
+.section.dark .fact b,
+.section.dark .small-link,
+.section.dark a{
+  color:#ffd978 !important;
+  -webkit-text-fill-color:#ffd978 !important;
+}
+.section.dark .card,
+.section.dark .fact,
+.section.dark .access div,
+.section.dark .source-list{
+  background:rgba(255,248,224,.08) !important;
+  border-color:rgba(255,217,120,.34) !important;
+  box-shadow:none !important;
+}
+.section.dark .card p,
+.section.dark .source-list li,
+.section.dark .note{
+  color:#f5e4bb !important;
+  -webkit-text-fill-color:#f5e4bb !important;
+}
+/* contact panel is inside dark section, so force it back to readable light design */
+.section.dark .contact-panel,
+.section.dark .contact-panel *{
+  color:var(--read-ink) !important;
+  -webkit-text-fill-color:var(--read-ink) !important;
+  text-shadow:none !important;
+  opacity:1 !important;
+}
+.section.dark .contact-panel{
+  background:var(--read-card) !important;
+  border:1px solid rgba(80,40,20,.24) !important;
+}
+.section.dark .contact-panel .heading p,
+.section.dark .contact-panel b,
+.section.dark .contact-panel strong,
+.section.dark .contact-panel h3{
+  color:var(--read-red) !important;
+  -webkit-text-fill-color:var(--read-red) !important;
+}
+.section.dark .contact-panel p,
+.section.dark .contact-panel li,
+.section.dark .contact-panel .join-cell,
+.section.dark .contact-panel .contact-info{
+  color:var(--read-body) !important;
+  -webkit-text-fill-color:var(--read-body) !important;
+}
+.contact-panel a:not(.btn),
+.contact-info a{
+  color:#0069a8 !important;
+  -webkit-text-fill-color:#0069a8 !important;
+  font-weight:900 !important;
+  text-decoration:underline !important;
+}
+.btn.primary{
+  color:#160d06 !important;
+  -webkit-text-fill-color:#160d06 !important;
+  background:linear-gradient(135deg,#ffe28b,#d5a63d) !important;
+  border:1px solid rgba(90,50,15,.25) !important;
+}
+.btn.ghost{
+  color:#fff8e7 !important;
+  -webkit-text-fill-color:#fff8e7 !important;
+  background:#23140d !important;
+  border:1px solid rgba(255,230,160,.55) !important;
+}
+.contact-panel .btn.ghost,
+.section:not(.dark) .btn.ghost,
+.schedule-actions .btn.ghost{
+  color:#17100b !important;
+  -webkit-text-fill-color:#17100b !important;
+  background:#fff0c4 !important;
+  border:1px solid rgba(139,31,22,.34) !important;
+}
+/* Hero: stronger contrast from the very top */
+.hero-inner{
+  background:rgba(0,0,0,.78) !important;
+  border:1px solid rgba(255,217,120,.58) !important;
+}
+.kicker,
+.lead{
+  color:#fff7df !important;
+  -webkit-text-fill-color:#fff7df !important;
+  text-shadow:0 3px 14px #000,0 0 8px #000 !important;
+}
+.hero-title,
+.hero h1{
+  color:#ffe08a !important;
+  -webkit-text-fill-color:transparent !important;
+  text-shadow:0 4px 0 rgba(0,0,0,.9),0 12px 28px rgba(0,0,0,.95) !important;
+}
+/* Gallery captions: make them readable */
+.gallery-item figcaption{
+  color:#fffaf0 !important;
+  -webkit-text-fill-color:#fffaf0 !important;
+  background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.92)) !important;
+  text-shadow:0 3px 12px #000,0 0 4px #000 !important;
+}
+/* Schedule cards */
+.schedule-section,
+.schedule-section .wrap,
+.schedule-section .schedule-list{
+  color:var(--read-ink) !important;
+}
+.schedule-highlight div{
+  background:#20100a !important;
+  color:#fff7df !important;
+  border-color:rgba(255,217,120,.34) !important;
+}
+.schedule-highlight div *{
+  color:#fff7df !important;
+  -webkit-text-fill-color:#fff7df !important;
+}
+.schedule-highlight span{
+  color:#ffd978 !important;
+  -webkit-text-fill-color:#ffd978 !important;
+}
+.schedule-month{
+  background:#8b1f16 !important;
+  color:#fff7df !important;
+  -webkit-text-fill-color:#fff7df !important;
+}
+.schedule-item.feature,
+.schedule-item.important{
+  background:var(--read-card2) !important;
+}
+/* Mobile: biggest readability changes */
+@media (max-width:900px){
+  .header{
+    position:sticky !important;
+    top:0 !important;
+    left:0 !important;
+    transform:none !important;
+    width:100% !important;
+    border-radius:0 !important;
+    margin:0 !important;
+    background:#0b0705 !important;
+    z-index:200 !important;
+  }
+  .brand span:last-child{font-size:14px !important;letter-spacing:.02em !important;}
+  .hero{min-height:calc(100svh - 56px) !important;}
+  .hero:before{background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,.46) 45%,rgba(0,0,0,.90)) !important;}
+  .hero-inner{
+    width:calc(100% - 24px) !important;
+    padding:58px 16px 28px !important;
+    background:rgba(0,0,0,.82) !important;
+  }
+  .kicker{font-size:12px !important;line-height:1.8 !important;}
+  .hero-title,
+  .hero h1{font-size:clamp(44px,14vw,64px) !important;line-height:1.12 !important;letter-spacing:.03em !important;}
+  .lead{font-size:17px !important;line-height:1.85 !important;font-weight:900 !important;}
+  .section{padding:54px 18px !important;}
+  .section:before{display:none !important;}
+  .heading h2{font-size:clamp(28px,8.4vw,40px) !important;line-height:1.45 !important;}
+  .heading p{font-size:12px !important;line-height:1.6 !important;}
+  p,.copy,li,.note{font-size:16px !important;line-height:1.9 !important;}
+  .text-large{font-size:22px !important;line-height:1.65 !important;}
+  .fact,.story,.tile,.support div,.access div,.contact-panel,.contact-info,.join-cell,.schedule-item,.source-list,.card{
+    padding:20px 18px !important;
+    background:var(--read-card) !important;
+    color:var(--read-ink) !important;
+    min-height:0 !important;
+    height:auto !important;
+  }
+  .section.dark .card,
+  .section.dark .fact,
+  .section.dark .access div,
+  .section.dark .source-list{
+    background:rgba(255,248,224,.08) !important;
+  }
+  .support{gap:14px !important;}
+  .support div h3{font-size:24px !important;line-height:1.45 !important;margin-bottom:10px !important;}
+  .support div p{display:block !important;color:var(--read-body) !important;-webkit-text-fill-color:var(--read-body) !important;font-size:16px !important;line-height:1.9 !important;}
+  .join-cell{font-size:16px !important;line-height:1.9 !important;}
+  .join-cell b{display:block !important;margin-bottom:8px !important;}
+  .contact-info p{word-break:break-word !important;}
+  .gallery-item figcaption{font-size:15px !important;line-height:1.55 !important;}
+}
